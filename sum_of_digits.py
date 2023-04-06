@@ -1,8 +1,8 @@
 import csv
 
-def sum_of_digits_csv("numbers.csv"):
-    with open("numbers.csv") as csvfile:
-        reader = csv.reader("numbers.csv")
+def sum_of_digits_csv(x):
+    with open(x) as csvfile:
+        reader = csv.reader(csvfile)
         for row in reader:
             for number in row:
                 if not number.isdigit():
@@ -17,3 +17,6 @@ def sum_of_digits_csv("numbers.csv"):
                     sum += n % 10
                     n //= 10
                 print(f"Input number: {number}, Result: {sum}")
+
+
+sum_of_digits_csv("numbers.csv")
